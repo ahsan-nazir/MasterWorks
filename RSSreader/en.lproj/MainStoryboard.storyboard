@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--SignIN View Controller-->
+        <scene sceneID="StU-nw-b0n">
+            <objects>
+                <viewController id="WVb-Cq-QjQ" customClass="SignINViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jKh-HC-erJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="xbL-R3-4wk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pm7-9r-3Jy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin@admin.com" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="41M-1i-scT">
+                                <rect key="frame" x="87" y="156" width="152" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WVb-Cq-QjQ" id="xYb-pK-QXu"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="asdf1234" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P6h-dw-K0e">
+                                <rect key="frame" x="87" y="221" width="152" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WVb-Cq-QjQ" id="c8l-Kp-eAq"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mf5-Ym-neo">
+                                <rect key="frame" x="87" y="290" width="152" height="30"/>
+                                <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInBtnClicked:" destination="WVb-Cq-QjQ" eventType="touchUpInside" id="RXb-iC-vUl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EcJ-FT-QhP"/>
+                    <connections>
+                        <outlet property="nameField" destination="41M-1i-scT" id="erO-rw-aPI"/>
+                        <outlet property="passWordFiled" destination="P6h-dw-K0e" id="Myj-Hb-8Cs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lw1-qs-24m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157" y="-365"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="11">
+            <objects>
+                <navigationController id="3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WVb-Cq-QjQ" kind="relationship" relationship="rootViewController" id="PGP-EG-DoU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-236" y="79"/>
+        </scene>
+        <!--Master-->
+        <scene sceneID="18">
+            <objects>
+                <tableViewController storyboardIdentifier="APPMasterViewController" title="Master" id="12" customClass="APPMasterViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="12" id="16"/>
+                            <outlet property="delegate" destination="12" id="15"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Stories" id="36"/>
+                    <connections>
+                        <outlet property="tableView" destination="13" id="Rvr-U5-hsH"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="552" y="69"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="24">
+            <objects>
+                <viewController storyboardIdentifier="APPDetailViewController" title="Detail" id="21" customClass="APPDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6d3-Sd-o5q"/>
+                        <viewControllerLayoutGuide type="bottom" id="7P4-61-9LU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="22">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llE-Qw-2JJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="llE-Qw-2JJ" firstAttribute="bottom" secondItem="22" secondAttribute="bottom" id="9nn-5d-KrX"/>
+                            <constraint firstItem="llE-Qw-2JJ" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" id="Rlq-Ux-oqU"/>
+                            <constraint firstItem="llE-Qw-2JJ" firstAttribute="top" secondItem="22" secondAttribute="top" id="WDq-VD-gas"/>
+                            <constraint firstItem="llE-Qw-2JJ" firstAttribute="leading" secondItem="22" secondAttribute="leading" id="qIh-OA-tUQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Content" id="26"/>
+                    <connections>
+                        <outlet property="webView" destination="llE-Qw-2JJ" id="Pie-Yn-WDr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="64"/>
+        </scene>
+    </scenes>
+</document>
